@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "bitcoin_Dapp_backend": {
+      "candid": "src/bitcoin_Dapp_backend/bitcoin_Dapp_backend.did",
+      "package": "bitcoin_Dapp_backend",
+      "type": "rust"
+    },
+    "bitcoin_Dapp_frontend": {
+      "dependencies": [
+        "bitcoin_Dapp_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/bitcoin_Dapp_frontend/src/index.html"
+      },
+      "source": [
+        "src/bitcoin_Dapp_frontend/assets",
+        "dist/bitcoin_Dapp_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
