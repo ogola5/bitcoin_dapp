@@ -1,5 +1,5 @@
 {
-  "name": "bitcoin_Dapp_frontend",
+  "name": "bitcoin_dapp_frontend",
   "version": "0.2.0",
   "description": "Internet Computer starter application",
   "keywords": [
@@ -14,7 +14,7 @@
     "start": "webpack serve --mode development --env development",
     "deploy:local": "dfx deploy --network=local",
     "deploy:ic": "dfx deploy --network=ic",
-    "generate": "dfx generate bitcoin_Dapp_backend"
+    "generate": "dfx generate bitcoin_dapp_backend"
   },
   "dependencies": {
     "@dfinity/agent": "^0.21.4",

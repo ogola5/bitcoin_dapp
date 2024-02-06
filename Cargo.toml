@@ -1,4 +1,4 @@
 [workspace]
 members = [
-    "src/bitcoin_Dapp_backend",
+    "src/bitcoin_dapp_backend",
 ]

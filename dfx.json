@@ -1,30 +1,36 @@
+
 {
+  "version": 1,
   "canisters": {
-    "bitcoin_Dapp_backend": {
-      "candid": "src/bitcoin_Dapp_backend/bitcoin_Dapp_backend.did",
-      "package": "bitcoin_Dapp_backend",
-      "type": "rust"
-    },
-    "bitcoin_Dapp_frontend": {
-      "dependencies": [
-        "bitcoin_Dapp_backend"
-      ],
-      "frontend": {
-        "entrypoint": "src/bitcoin_Dapp_frontend/src/index.html"
-      },
-      "source": [
-        "src/bitcoin_Dapp_frontend/assets",
-        "dist/bitcoin_Dapp_frontend/"
-      ],
-      "type": "assets"
+    "bitcoin_dapp_backend": {
+      "type": "custom",
+      "package": "bitcoin_dapp_backend",
+      "candid": "src/bitcoin_dapp_backend/bitcoin_dapp_backend.did",
+      "wasm": "target/wasm32-unknown-unknown/release/bitcoin_dapp_backend.wasm",
+      "build": "src/bitcoin_dapp_backend/build.sh",
+      "metadata": [
+        {
+          "name": "candid:service"
+        }
+      ]
     }
   },
   "defaults": {
+    "bitcoin": {
+      "enabled": true,
+      "nodes": [
+        "127.0.0.1:18444"
+      ],
+      "log_level": "info"
+    },
     "build": {
-      "args": "",
-      "packtool": ""
+      "packtool": "",
+      "args": ""
     }
   },
-  "output_env_file": ".env",
-  "version": 1
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943"
+    }
+  }
 }
